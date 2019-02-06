@@ -48,7 +48,7 @@ public class StudentPedin extends Student implements WriteToDbInterface, ParseFi
 
         try {
             openConnection();
-            if (super.validateData(data)) {
+            if (validateData(data)) {
                 for (String datum : data) {
                     bufferedWriter.write(getDate() + " - " + datum);
                     bufferedWriter.newLine();

@@ -75,7 +75,7 @@ public abstract class AbstractStudent {
      * @param data
      * @return true if not empty false otherwise
      */
-    boolean validateData(ArrayList<String> data) {
+    boolean validateData(List<String> data) {
         if ((!data.isEmpty()) && (!data.get(0).isEmpty()) && (!data.get(1).isEmpty()) &&
                 (Integer.parseInt(data.get(2)) > 16) && (Integer.parseInt(data.get(2)) < 26) &&
                 ((data.get(3) == "Male") || (data.get(3) == "Female"))) {
