@@ -23,17 +23,17 @@ public class StudentPedin extends Student implements WriteToDbInterface, ParseFi
     @Override
     public ArrayList parseFile(String pathToFile) {
 
-        Scanner s = null;
+        Scanner scanner = null;
         try {
-            s = new Scanner(new File(pathToFile));
+            scanner = new Scanner(new File(pathToFile));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         ArrayList<String> data = new ArrayList<>();
-        while (s.hasNext()) {
-            data.add(s.next());
+        while (scanner.hasNext()) {
+            data.add(scanner.next());
         }
-        s.close();
+        scanner.close();
 
         return data;
     }
@@ -48,7 +48,7 @@ public class StudentPedin extends Student implements WriteToDbInterface, ParseFi
 
         try {
             openConnection();
-            if (validateData(data)) {
+            if (validateData((ArrayList<String>) data)) {
                 for (String datum : data) {
                     bufferedWriter.write(getDate() + " - " + datum);
                     bufferedWriter.newLine();

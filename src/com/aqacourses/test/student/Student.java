@@ -10,7 +10,7 @@ public class Student extends AbstractStudent {
      * @param data
      * @return true if not empty false otherwise
      */
-    boolean validateData(List<String> data) {
+    boolean checkData(List<String> data) {
         /*if (!data.isEmpty()) {
             return true;
         }

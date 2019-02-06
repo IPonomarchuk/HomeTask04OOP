@@ -21,7 +21,7 @@ public class StudentNki extends Student implements WriteToDbInterface {
     public void writeToDb(List<String> data) {
         try {
             openConnectionToDb();
-            if (validateData(data)) {
+            if (checkData(data)) {
                 for (String datum : data) {
                     printWriter.println(getDate() + " - " + datum);
                 }

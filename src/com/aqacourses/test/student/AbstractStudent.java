@@ -73,14 +73,16 @@ public abstract class AbstractStudent {
      * Verify that data is not empty and contains name, surname, age, sex
      *
      * @param data
-     * @return true if not empty false otherwise
+     * @return true if not empty and name, surname, age, sex are valid false otherwise
      */
-    boolean validateData(List<String> data) {
+    boolean validateData(ArrayList<String> data) {
         if ((!data.isEmpty()) && (!data.get(0).isEmpty()) && (!data.get(1).isEmpty()) &&
                 (Integer.parseInt(data.get(2)) > 16) && (Integer.parseInt(data.get(2)) < 26) &&
-                ((data.get(3) == "Male") || (data.get(3) == "Female"))) {
+                ((data.get(3).toLowerCase().equals("male")) || (data.get(3).toLowerCase().equals("female")))) {
             return true;
         }
+        System.err.println("Data are invalid");
+        ;
         return false;
     }
 

@@ -48,7 +48,7 @@ public class Runner {
         studentPedin.openGui();
 
         // Parse data
-        data = studentPedin.parseFile("D:\\AqaGLCourses\\HomeTask04OOP\\Data.txt");
+        data = studentPedin.parseFile("src/com/aqacourses/test/resources/Data.txt");
 
         // Write data to 'DB'
         studentPedin.writeToDb(data);
